@@ -1,0 +1,107 @@
+---
+import PageLayout from '@/layouts/CommonPage.astro'
+import ProjectSection from '@/components/projects/ProjectSection.astro'
+
+const headings = [
+  { depth: 2, slug: 'ongoing', text: 'Ongoing' },
+  { depth: 2, slug: 'finished', text: 'Finished' },
+  { depth: 2, slug: 'archived', text: 'Archived' },
+  { depth: 2, slug: 'learnings', text: 'Learnings' }
+]
+---
+
+<PageLayout title='Projects' {headings} view>
+  Here I showcase my personal and collaborative projects. <br>
+  These projects range from small scripts to full-fledged apps while covering variety of domains under software engineering. <br>
+  Hopefully, you find something interesting!
+  <h2 id='ongoing'>Ongoing</h2>
+  <ProjectSection
+    projects={[
+      {
+        name: 'D<sup>3</sup> Web',
+        description: 'Web application for data visualization and analysis',
+        tags: ['collaborative', 'p-society'],
+        links: [
+          { type: 'github', href: 'https://github.com/p-society/d3-web' }
+        ]
+      },
+      {
+        name: 'ujsqdfs',
+        description: 'A distributed filesystem written in C as a hobby project',
+        links: [
+          { type: 'github', href: 'https://github.com/ujsquared/ujsqdfs' }
+        ]
+      }
+    ]}
+  />
+
+  <h2 id='finished'>Finished</h2>
+  <ProjectSection
+    projects={[
+      {
+        name: 'rayPong',
+        description: 'A Pong game implementation',
+        links: [
+          { type: 'github', href: 'https://github.com/ujsquared/rayPong' }
+        ]
+      },
+      {
+        name: 'IT Bootcamp',
+        description: 'Collaborative project with shokyuansh',
+        tags: ['collaborative'],
+        links: [
+          { type: 'github', href: 'https://github.com/ujsquared/it-bootcamp' },
+          { type: 'site', href: 'https://it-bootcamp-psi.vercel.app/' }
+        ]
+      },
+      {
+        name: 'Chowkidaar',
+        description: 'Collaborative project under p-society organization',
+        tags: ['collaborative', 'p-society'],
+        links: [
+          { type: 'github', href: 'https://github.com/p-society/chowkidaar' }
+        ]
+      },
+      {
+        name: 'karm.nvim',
+        description: 'A todo list plugin for neovim written for my personal usage',
+        links: [
+          { type: 'github', href: 'https://github.com/ujsquared/karm.nvim' }
+        ]
+      },
+      {
+        name: 'anti-vibecode.nvim',
+        description: 'A Neovim plugin that provides LLM-based code guidance with senior engineer-like mentorship',
+        links: [
+          { type: 'github', href: 'https://github.com/ujsquared/anti-vibecode.nvim' }
+        ]
+      }
+    ]}
+  />
+
+  <h2 id='archived'>Archived</h2>
+  <ProjectSection
+    projects={[
+      {
+        name: 'Kadence Text Editor',
+        description: 'A text editor project',
+        links: [
+          { type: 'github', href: 'https://github.com/ujsquared/kadenceTextEditor' }
+        ]
+      }
+    ]}
+  />
+
+  <h2 id='learnings'>Learnings</h2>
+  <ProjectSection
+    projects={[
+      {
+        name: 'GPU Programming',
+        description: 'Learning GPU programming with GLSL shaders and OpenGL',
+        links: [
+          { type: 'github', href: 'https://github.com/ujsquared/gpu-programming-learning' }
+        ]
+      }
+    ]}
+  />
+</PageLayout>

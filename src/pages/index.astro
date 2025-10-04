@@ -1,0 +1,43 @@
+---
+import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
+import { PostPreview } from 'astro-pure/components/pages'
+import { Button } from 'astro-pure/user'
+import PageLayout from '@/layouts/BaseLayout.astro'
+
+const MAX_POSTS = 10
+const MAX_CONTRIBUTIONS = 6
+
+const allPosts = await getBlogCollection()
+const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
+
+---
+
+<PageLayout meta={{ title: 'Home' }} highlightColor='#659EB9'>
+  <main class='w-full'>
+    <div id='content' class='animate flex flex-col gap-y-10'>
+      <div class='flex items-center gap-2 text-lg'>
+        <span class='font-bold underline'>If you're looking to know more about me, go here</span>
+        <a href='/about' class='inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors'>
+          <svg class='w-5 h-5' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 5l7 7-7 7'></path>
+          </svg>
+        </a>
+      </div>
+
+      {
+        allPostsByDate.length > 0 && (
+          <div>
+            <h2 class='mb-6 text-2xl font-bold'>Latest Posts</h2>
+            <div class='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
+              {allPostsByDate.map((p) => (
+                <PostPreview post={p} detailed class='h-full' />
+              ))}
+            </div>
+            <Button title='More posts' class='w-fit self-end mt-4' href='/blog' variant='ahead' />
+          </div>
+        )
+      }
+
+    </div>
+  </main>
+</PageLayout>

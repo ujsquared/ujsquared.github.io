@@ -1,0 +1,139 @@
+---
+import { Button, Collapse, Spoiler, Timeline, Icon } from 'astro-pure/user'
+import PageLayout from '@/layouts/CommonPage.astro'
+import ToolSection from '@/components/about/ToolSection.astro'
+
+const headings = [
+  { depth: 2, slug: 'about', text: 'About' },
+  { depth: 2, slug: 'history', text: 'History' },
+  { depth: 2, slug: 'present-future', text: 'Present & Future' },
+  { depth: 2, slug: 'fun', text: 'Fun' }
+]
+---
+
+<PageLayout title='About' {headings} comment>
+<p>Student / Engineer</p>
+  {/* right-side image container near About intro */}
+  <div class='float-right ml-8 mb-4 w-[360px] h-[220px] rounded-xl border overflow-hidden'>
+    <img
+      src='https://storage.googleapis.com/tech-society/littleMe.jpeg'
+      alt='Ujjwal Kala'
+      class='w-full h-full object-cover'
+      loading='lazy'
+      decoding='async'
+    />
+  </div>
+  <p>
+  Hi, I’m Ujjwal Kala, a 21-year-old from Delhi-NCR, currently pursuing my B.Tech in Information Technology at IIIT Bhubaneswar. I enjoy solving problems, exploring how technology works under the hood, cracking the occasional joke, and sometimes reflecting on the bigger questions of life. <br>
+  </p>
+  <p>
+  To keep going, is the only possible way to win!
+  </p>
+
+  {/* general-talk */}
+  <h2 id='history'>History</h2>
+  <Timeline
+    events={[
+      {
+        date: '2009',
+        content:
+          'First taste of computers on a Dell Inspiron 545s, spent years squeezing out performance to play games without a GPU'
+      },
+      {
+        date: '2014',
+        content:
+          'Started modding games with custom assets. FIFA, GTA, Counter-Strike, you name it, I modded it.'
+      },
+      {
+        date: '2017',
+        content:
+          'Dual-booted Kali Linux on a non-UEFI system; first hacker rush. Cracked a weak WiFi password with aircrack-ng (script‑kiddie era)'
+      },
+      {
+        date: '2019',
+        content:
+          'High school: experimented with Python; then shifted focus to entrance exam prep.'
+      },
+      {
+        date: '2022',
+        content:
+          'High school completed; wrapped up entrance prep.'
+      },
+      {
+        date: '2023',
+        content:
+          'Joined IIIT Bhubaneswar (EEE). Spent first year deep into Linux ricing; moved to i3wm and Arch Linux while prepping the branch switch from Electronics and Electrical to IT.'
+      },
+      {
+        date: '2024',
+        content:
+          'worked at Aveti Learning (first production Python); contributed to Plone; missed GSoC and spent the summer on GPU programming, OS fundamentals, and DSA.'
+      },
+      {
+        date: 'Present',
+        content:
+          'mentoring juniors at P‑SoC IIIT Bhubaneswar, leveling up frontend, and strengthening CS fundamentals with projects'
+      }
+    ]}
+  />
+
+  {/* present */}
+  <h2 id='present'>Present & Future</h2>
+  <p>
+    My fingers are currently dipped in a few different projects, but I seek to mostly build things that sharpen my CS fundamentals.
+    Currently building a custom filesystem to serve as the storage layer for a distributed file storage system; <br> re‑creating my <code>rayPong</code> project with pure OpenGL (ditching raylib);<br> parking a few audience based ideas for later like a memeDB and a cross‑device YouTube controller (Spotify‑style); <br> <br> all while juggling engineering coursework and mentoring juniors toward impactful open‑source contributions.
+  </p>
+
+  {/* fun */}
+  <h2 id='fun'>Fun</h2>
+  <p>
+    When I’m not working, you’ll probably find me sketching or experimenting with digital art. Other times, I’m busy losing endlessly to FIFA on legendary difficulty. If I’m away from my computer, I’m either reading or hanging out with friends, usually making completely senseless dad jokes.
+  </p>
+
+  {/* environment */}
+  <h2 id='environment'>Tools I use</h2>
+  <div class='grid grid-cols-2 gap-x-8 gap-y-2'>
+    <ul class='space-y-2'>
+      <li><a href='https://www.adobe.com/products/photoshop'>Photoshop</a></li>
+      <li><a href='https://www.gimp.org/'>GIMP</a></li>
+      <li><a href='https://hyprland.org/'>Hyprland</a></li>
+      <li><a href='https://zenbrowser.app/'>Zen</a></li>
+    </ul>
+    <ul class='space-y-2'>
+      <li><a href='https://ubuntu.com/'>Ubuntu</a></li>
+      <li><a href='https://neovim.io/'>Neovim</a></li>
+      <li><a href='https://github.com/tmux/tmux'>tmux</a></li>
+      <li><a href='https://alacritty.org/'>Alacritty</a></li>
+    </ul>
+  </div>
+
+  {/* social-networks */}
+  <h2 id='social-networks'>Social Networks</h2>
+  <p>
+  Spending most of my teen years on the web, I recently switched my lifestyle to one with limited internet footprint. That said you can find me and my remains on most platforms with the handle <b><u>@ujsquared</u></b>. Below are some handles I'm currently active on.
+  </p>
+  <div class="grid grid-cols-1 gap-3 rounded-xl border p-2 sm:grid-cols-2 sm:p-3">
+      <a class="group text-muted-foreground no-underline" href="https://github.com/ujsquared" target="_blank" rel="noopener noreferrer">
+        <div class="flex items-center gap-3 rounded-lg border border-transparent px-3 py-2 transition-all hover:border-border hover:bg-muted">
+          <Icon name="github" />
+          <div class="flex-1 text-foreground transition-colors group-hover:text-primary">GitHub</div>
+          <span class="text-sm font-normal">@ujsquared</span>
+        </div>
+      </a>
+      <a class="group text-muted-foreground no-underline" href="https://discord.com/users/ujsquared" target="_blank" rel="noopener noreferrer">
+        <div class="flex items-center gap-3 rounded-lg border border-transparent px-3 py-2 transition-all hover:border-border hover:bg-muted">
+          <Icon name="discord" color="#5865F2" />
+          <div class="flex-1 text-foreground transition-colors group-hover:text-primary">Discord</div>
+          <span class="text-sm font-normal">@ujsquared</span>
+        </div>
+      </a>
+      <a class="group text-muted-foreground no-underline" href="mailto:ujsquared@gmail.com" target="_blank" rel="noopener noreferrer">
+        <div class="flex items-center gap-3 rounded-lg border border-transparent px-3 py-2 transition-all hover:border-border hover:bg-muted">
+          <Icon name="email" color="#EA4335" />
+          <div class="flex-1 text-foreground transition-colors group-hover:text-primary">Email</div>
+          <span class="text-sm font-normal">ujsquared@gmail.com</span>
+        </div>
+      </a>
+    </div>
+
+</PageLayout>
