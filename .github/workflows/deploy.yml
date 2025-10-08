@@ -42,5 +42,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           user_name: 'ujsquared'
-          user_email: 'ujsquared@example.com'
-
+          user_email: 'ujsquared@gmail.com'
