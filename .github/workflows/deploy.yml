@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 env:
-  BUN_LINK_PKG: true  # This ensures Pure is linked correctly on CI
+  BUN_LINK_PKG: true  # Links Pure locally
 
 jobs:
   build:
@@ -29,6 +29,11 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           version: 8
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
 
       - name: Install dependencies
         run: pnpm install
